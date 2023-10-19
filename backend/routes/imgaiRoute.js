@@ -1,6 +1,6 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
-import { Configuration, OpenAIApi } from 'openai';
+import { Configuration, OpenAI } from 'openai';
 
 dotenv.config();
 
@@ -10,7 +10,7 @@ const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 })
 
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAI(configuration);
 
 router.route('/').get((req, res)=>{
     res.send('OpenAI connected');
